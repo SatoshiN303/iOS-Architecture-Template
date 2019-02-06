@@ -1,0 +1,39 @@
+source 'https://github.com/CocoaPods/Specs'
+
+platform :ios, '10.0'
+use_frameworks!
+
+#=== Note
+#
+# 基本的にpod利用が推奨されているライブラリのみ記述しています
+# 毎回のビルド時間を短縮させるため可能な限りcarthageを利用してください
+#
+def app_pods
+
+    #=== Required
+    #
+    pod 'SwiftLint', '~> 0.30.1'
+
+    
+    #=== Option
+    #
+    #  クラッシュレポートやGAなどアカウント等を発行してplistの登録が必要なものです
+    #
+    #pod 'Crashlytics'
+    #pod 'Fabric', '~> 1.6'
+    #pod 'Repro'
+
+end
+
+target 'ProjectName' do
+    app_pods
+end
+
+post_install do |installer|
+    puts 'Removing static analyzer support'
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['OTHER_CFLAGS'] = "$(inherited) -Qunused-arguments -Xanalyzer -analyzer-disable-all-checks"
+        end
+    end
+end

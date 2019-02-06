@@ -1,0 +1,38 @@
+#===Network
+#github "Alamofire/Alamofire" ~> 4.7
+
+#===Async
+#github "Thomvis/BrightFutures"
+
+#===Routing
+#github "hyperoslo/Compass"
+
+#===UI
+#github "ninjaprox/NVActivityIndicatorView"
+
+#===ImageLoader
+github "kean/Nuke"
+
+#===DB
+#github "realm/realm-cocoa"
+
+#===ファイル保存
+#github "saoudrizwan/Disk"
+
+#===utility
+github "Ekhoo/Device"
+github "malcommac/SwiftDate"
+#github "malcommac/SwiftLocation"
+#github "kishikawakatsumi/KeychainAccess"
+
+
+
+#===PushNotification
+#github "NIFTYCloud-mbaas/ncmb_ios"
+#github "aws/aws-sdk-ios"
+
+# Firebaseはまだ公式サポートしていないのでpodを利用のこと
+
+#===Test
+#github "Quick/Quick" ~> 1.2.0
+#github "Quick/Nimble" ~> 7.0.3
