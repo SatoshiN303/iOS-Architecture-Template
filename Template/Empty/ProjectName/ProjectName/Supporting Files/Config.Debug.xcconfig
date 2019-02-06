@@ -1,0 +1,16 @@
+//
+//  Config.Debug.xcconfig
+//  ProjectName
+//
+//  Created by AuthorName
+//  Copyright © 2018 OrganizationName. All rights reserved.
+//
+#include "Pods/Target Support Files/Pods-ProjectName/Pods-ProjectName.debug.xcconfig"
+
+PRODUCT_BUNDLE_IDENTIFIER=OrganizationIdentifier.ProjectName.debug
+OTHER_SWIFT_FLAGS = $(inherited) "-Onone" "-D" "DEBUG" "-D" "COCOAPODS" "-Xfrontend" "-warn-long-function-bodies=150"
+
+// Push Notification
+NCMB_APPLICATION_KEY = mBaasで作成したアプリケーションキーを設定
+NCMB_CLIENT_KEY = mBaasで作成したクライアントキーを設定
+AWS_SNS_PLATFORM_ARN = AWS SNSで作成したApplicationのARNを設定
