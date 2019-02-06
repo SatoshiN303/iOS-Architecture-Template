@@ -15,11 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-//        PushNotificationModule.shared.registerForRemote()
-//        PushNotificationModule.shared.didFinishLaunching(options: launchOptions)
-//        Log.debug("デバッグログのテスト")
-//        Log.fatal("fatale Errorのメッセージ")
-        configure()
         return true
     }
 
