@@ -66,10 +66,10 @@ struct PushNotificationModule {
     }
     
     /// アプリ起動時にpushあるか確認する
-    func didFinishLaunching(options: [UIApplicationLaunchOptionsKey: Any]?) {
+    func didFinishLaunching(options: [UIApplication.LaunchOptionsKey: Any]?) {
        clearAppIconBadge()
         
-        guard let userInfo = options?[UIApplicationLaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] else {
+        guard let userInfo = options?[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] else {
             return
         }
         
@@ -84,7 +84,7 @@ struct PushNotificationModule {
     func didReceiveRemoteNotification(application: UIApplication, options: [AnyHashable: Any]) {
         
         clearAppIconBadge()
-        guard let userInfo = options[UIApplicationLaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] else {
+        guard let userInfo = options[UIApplication.LaunchOptionsKey.remoteNotification] as? [AnyHashable: Any] else {
             return
         }
         

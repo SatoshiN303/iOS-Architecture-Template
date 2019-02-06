@@ -12,7 +12,7 @@ def app_pods
 
     #=== Required
     #
-    pod 'SwiftLint', '~> 0.25.0'
+    pod 'SwiftLint', '~> 0.30.1'
 
     
     #=== Option
