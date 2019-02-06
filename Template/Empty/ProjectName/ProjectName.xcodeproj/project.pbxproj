@@ -10,6 +10,12 @@
 		071FBD6D202840BA005F0D96 /* PushNotificationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FBD6C202840BA005F0D96 /* PushNotificationModule.swift */; };
 		071FBD6F202843D2005F0D96 /* NotificationPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071FBD6E202843D2005F0D96 /* NotificationPayload.swift */; };
 		07643DEE20512F0200986CA9 /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07643DED20512F0200986CA9 /* BundleExtension.swift */; };
+		221EA139220ACBC9005B25D6 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 221EA133220ACBC8005B25D6 /* Cartfile */; };
+		221EA13A220ACBC9005B25D6 /* Dangerfile in Resources */ = {isa = PBXBuildFile; fileRef = 221EA134220ACBC9005B25D6 /* Dangerfile */; };
+		221EA13B220ACBC9005B25D6 /* Brewfile in Resources */ = {isa = PBXBuildFile; fileRef = 221EA135220ACBC9005B25D6 /* Brewfile */; };
+		221EA13C220ACBC9005B25D6 /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 221EA136220ACBC9005B25D6 /* Gemfile */; };
+		221EA13D220ACBC9005B25D6 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 221EA137220ACBC9005B25D6 /* Podfile */; };
+		221EA13E220ACBC9005B25D6 /* bootstrap.sh in Resources */ = {isa = PBXBuildFile; fileRef = 221EA138220ACBC9005B25D6 /* bootstrap.sh */; };
 		2225225420770070001A52A4 /* NavigateConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225225320770070001A52A4 /* NavigateConfigurator.swift */; };
 		2233E930202190C200CFE6A3 /* ProjectNameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2233E92F202190C200CFE6A3 /* ProjectNameTests.swift */; };
 		2233E93F202190DB00CFE6A3 /* ProjectNameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2233E93E202190DB00CFE6A3 /* ProjectNameUITests.swift */; };
@@ -77,6 +83,12 @@
 		071FBD6C202840BA005F0D96 /* PushNotificationModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationModule.swift; sourceTree = "<group>"; };
 		071FBD6E202843D2005F0D96 /* NotificationPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPayload.swift; sourceTree = "<group>"; };
 		07643DED20512F0200986CA9 /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
+		221EA133220ACBC8005B25D6 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		221EA134220ACBC9005B25D6 /* Dangerfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dangerfile; sourceTree = "<group>"; };
+		221EA135220ACBC9005B25D6 /* Brewfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Brewfile; sourceTree = "<group>"; };
+		221EA136220ACBC9005B25D6 /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
+		221EA137220ACBC9005B25D6 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		221EA138220ACBC9005B25D6 /* bootstrap.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = bootstrap.sh; sourceTree = "<group>"; };
 		2225225320770070001A52A4 /* NavigateConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigateConfigurator.swift; sourceTree = "<group>"; };
 		2233E92D202190C200CFE6A3 /* ProjectNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjectNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2233E92F202190C200CFE6A3 /* ProjectNameTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameTests.swift; sourceTree = "<group>"; };
@@ -313,6 +325,12 @@
 		2867E81E1C74C7D300FCEBBD = {
 			isa = PBXGroup;
 			children = (
+				221EA138220ACBC9005B25D6 /* bootstrap.sh */,
+				221EA135220ACBC9005B25D6 /* Brewfile */,
+				221EA133220ACBC8005B25D6 /* Cartfile */,
+				221EA134220ACBC9005B25D6 /* Dangerfile */,
+				221EA136220ACBC9005B25D6 /* Gemfile */,
+				221EA137220ACBC9005B25D6 /* Podfile */,
 				2867E8291C74C7D400FCEBBD /* ProjectName */,
 				2233E92E202190C200CFE6A3 /* ProjectNameTests */,
 				2233E93D202190DB00CFE6A3 /* ProjectNameUITests */,
@@ -543,8 +561,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				221EA13B220ACBC9005B25D6 /* Brewfile in Resources */,
 				2867E8351C74C7D400FCEBBD /* LaunchScreen.storyboard in Resources */,
+				221EA13E220ACBC9005B25D6 /* bootstrap.sh in Resources */,
+				221EA13D220ACBC9005B25D6 /* Podfile in Resources */,
 				2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */,
+				221EA13A220ACBC9005B25D6 /* Dangerfile in Resources */,
+				221EA139220ACBC9005B25D6 /* Cartfile in Resources */,
+				221EA13C220ACBC9005B25D6 /* Gemfile in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

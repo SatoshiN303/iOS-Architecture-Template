@@ -1,9 +1,5 @@
 #!/bin/sh
 
-
-#gem  がなかったらinstall
-#brew がなかったらinstall
-
 if which bundle >/dev/null; then
   echo "Install Gems"
   bundle install
