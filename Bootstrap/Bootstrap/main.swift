@@ -27,12 +27,11 @@ public struct ProjectSettings {
     var organizationName: String
 }
 
-public struct Templates {
-    static let projectName = "XLProjectName"
-    static let bundleDomain = "XLOrganizationIdentifier"
-    static let author = "XLAuthorName"
-    static let userName = "XLUserName"
-    static let organizationName = "XLOrganizationName"
+public struct Template {
+    static let projectName = "ProjectName"
+    static let bundleDomain = "OrganizationIdentifier"
+    static let author = "AuthorName"
+    static let organizationName = "OrganizationName"
 }
 
 public struct Console {
@@ -167,10 +166,10 @@ extension NSURL {
     }
     
     func renameIfNeeded(_ projectName: String) {
-        guard let fileName = fileName, let _ = fileName.range(of: Templates.projectName) else {
+        guard let fileName = fileName, let _ = fileName.range(of: Template.projectName) else {
             return
         }
-        let renamedFileName = fileName.replacingOccurrences(of: Templates.projectName, with: projectName)
+        let renamedFileName = fileName.replacingOccurrences(of: Template.projectName, with: projectName)
         do {
             try FileManager.default.moveItem(at: self as URL, to: NSURL(fileURLWithPath: renamedFileName, relativeTo: deletingLastPathComponent) as URL)
         } catch let error as NSError {
@@ -187,10 +186,10 @@ extension NSURL {
             return
         }
         
-        var newContent = content.replacingOccurrences(of: Templates.projectName, with: settings.name)
-        newContent = newContent.replacingOccurrences(of: Templates.bundleDomain, with: settings.bundleID)
-        newContent = newContent.replacingOccurrences(of: Templates.author, with: settings.author)
-        newContent = newContent.replacingOccurrences(of: Templates.organizationName, with: settings.organizationName)
+        var newContent = content.replacingOccurrences(of: Template.projectName, with: settings.name)
+        newContent = newContent.replacingOccurrences(of: Template.bundleDomain, with: settings.bundleID)
+        newContent = newContent.replacingOccurrences(of: Template.author, with: settings.author)
+        newContent = newContent.replacingOccurrences(of: Template.organizationName, with: settings.organizationName)
         
         do {
             try newContent.write(to: self as URL, atomically: true, encoding: String.Encoding.utf8)
@@ -268,7 +267,7 @@ public class Main {
         projectSettings.architecture = dialogue.selectArchitecture()
         
         copyTemplateFolder()
-//        rename()
+        rename()
 //        carthage()
 //        cocoapods()
 //        open()
