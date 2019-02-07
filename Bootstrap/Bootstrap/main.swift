@@ -224,7 +224,7 @@ public class FilePath {
     }
     
     func projectTemplateURL(type: ArchitectureType) -> NSURL {
-        return NSURL(fileURLWithPath: "Template/\(type.rawValue)/ProjectName", relativeTo: runScriptPathURL.toURL)
+        return NSURL(fileURLWithPath: "Template/\(type.rawValue)/\(Template.projectName)", relativeTo: runScriptPathURL.toURL)
     }
     
     func generatedDirectoryURL(settings: ProjectSettings) -> NSURL {
