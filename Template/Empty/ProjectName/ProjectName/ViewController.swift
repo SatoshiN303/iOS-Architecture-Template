@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  ProjectName
 //
-//  Created by 佐藤 慎 on 2019/02/06.
-//  Copyright © 2019年 'XLOrganizationName'. All rights reserved.
+//  Created by AuthorName
+//  Copyright © 2019年 OrganizationName. All rights reserved.
 //
 
 import UIKit
