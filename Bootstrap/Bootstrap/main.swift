@@ -10,9 +10,9 @@
 
 import Foundation
 
-public enum ArchitectureType: String {
+public enum ArchitectureType: String,  CaseIterable {
     case empty = "Empty"
-    case mvc = "Cocoa MVC"
+    case mvc = "CocoaMVC"
     case mvp = "MVP"
     case mvvm = "MVVM"
     case viper = "VIPER"
@@ -64,8 +64,20 @@ public struct Console {
         for (idx, choise) in choices.enumerated() {
             print("\(idx)) \(choise)")
         }
-        let line = readLine()
-        return line == nil || line == "" ? defaultValue : line!
+        
+        guard let line = readLine(), !line.isEmpty else {
+            return defaultValue
+        }
+        
+        let range: CountableRange<Int> = 0..<choices.count
+        let isOutRange = range.filter { (idx) -> Bool in return "\(idx)" == line }.count == 0
+        
+        if isOutRange {
+            print("選択肢にある数字を入力してください")
+            return select(message: message, choices: choices, defaultValue: defaultValue)
+        }
+        
+        return line
     }
     
     public static func printInfo<T>(message: T)  {
@@ -92,9 +104,14 @@ public struct Dialogue {
     
     @discardableResult
     func selectArchitecture() -> ArchitectureType {
-        let choise = Console.select(message: "アーキテクチャーを選択してください", choices: ["Empty","MVC","MVP","MVVM","VIPER","CleanArchitecture"], defaultValue: "Empty")
-        // TODO:
-        return .empty
+        let typeNames = ArchitectureType.allCases.map { (type) -> String in type.rawValue }
+        let choise = Console.select(message: "ビルドしたいアーキテクチャーの番号を入力してください", choices: typeNames, defaultValue: "0")
+        
+        guard let choiseNumber = Int(choise) else {
+            fatalError()
+        }
+        
+        return ArchitectureType.allCases[choiseNumber]
     }
     
     @discardableResult
@@ -204,7 +221,7 @@ public class FilePath {
     }
     
     func projectTemplateURL(type: ArchitectureType) -> NSURL {
-        return NSURL(fileURLWithPath: type.rawValue, relativeTo: currentScriptPathURL as URL)
+        return NSURL(fileURLWithPath: "Template/\(type.rawValue)", relativeTo: runScriptPathURL.toURL)
     }
     
     func generatedDirectoryURL(settings: ProjectSettings) -> NSURL {
@@ -229,9 +246,9 @@ public class Main {
     private let filepath = FilePath()
     private var projectSettings = ProjectSettings(architecture: .empty,
                                                   name: "ProjectName",
-                                                  bundleID: "jp.co.companyname",
-                                                  author: "Developer",
-                                                  organizationName: "Hoge, Inc")
+                                                  bundleID: "com.abcd.Hello",
+                                                  author: "AuthorName",
+                                                  organizationName: "OrganizationName")
     private lazy var dialogue = Dialogue(settings: projectSettings)
     
     public func start() {
@@ -251,10 +268,10 @@ public class Main {
         projectSettings.architecture = dialogue.selectArchitecture()
         
         copyTemplateFolder()
-        rename()
-        carthage()
-        cocoapods()
-        open()
+//        rename()
+//        carthage()
+//        cocoapods()
+//        open()
     }
     
     private func copyTemplateFolder() {
@@ -396,3 +413,5 @@ public class Main {
 //
 //print("open \(name)/\(name).xcworkspace\n")
 //print(Console.shell(path: newProjectFolderPath, args: "open", "\(name)/\(name).xcworkspace").output)
+
+Main().start()
