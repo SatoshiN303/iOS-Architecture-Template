@@ -267,7 +267,7 @@ public class Main {
         projectSettings.organizationName = dialogue.settingOrganizationName()
         projectSettings.architecture = dialogue.selectArchitecture()
         
-//        copyTemplateFolder()
+        copyTemplateFolder()
 //        rename()
 //        carthage()
 //        cocoapods()
