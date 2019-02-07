@@ -219,12 +219,16 @@ public class FilePath {
         return NSURL(fileURLWithPath: path, isDirectory: true)
     }
     
+    public var artifactsDirectoryURL: NSURL {
+        return NSURL(fileURLWithPath: "Artifacts", relativeTo: runScriptPathURL.toURL)
+    }
+    
     func projectTemplateURL(type: ArchitectureType) -> NSURL {
-        return NSURL(fileURLWithPath: "Template/\(type.rawValue)", relativeTo: runScriptPathURL.toURL)
+        return NSURL(fileURLWithPath: "Template/\(type.rawValue)/ProjectName", relativeTo: runScriptPathURL.toURL)
     }
     
     func generatedDirectoryURL(settings: ProjectSettings) -> NSURL {
-        return NSURL(fileURLWithPath: settings.name, relativeTo: runScriptPathURL.toURL)
+        return NSURL(fileURLWithPath: settings.name, relativeTo: artifactsDirectoryURL.toURL)
     }
     
     func isAlreadyExist(settings: ProjectSettings) -> Bool {
@@ -243,12 +247,17 @@ public class FilePath {
 public class Main {
     private let ignoredFiles = [".DS_Store", "UserInterfaceState.xcuserstate"]
     private let filepath = FilePath()
+    private lazy var dialogue = Dialogue(settings: projectSettings)
+    
     private var projectSettings = ProjectSettings(architecture: .empty,
                                                   name: "ProjectName",
                                                   bundleID: "com.abcd.Hello",
                                                   author: "AuthorName",
                                                   organizationName: "OrganizationName")
-    private lazy var dialogue = Dialogue(settings: projectSettings)
+    
+    private var newURL: URL {
+        return filepath.generatedDirectoryURL(settings: projectSettings).toURL
+    }
     
     public func start() {
         
@@ -265,18 +274,16 @@ public class Main {
         projectSettings.author = dialogue.settingAuthor()
         projectSettings.organizationName = dialogue.settingOrganizationName()
         projectSettings.architecture = dialogue.selectArchitecture()
-        
+
         copyTemplateFolder()
         rename()
-//        carthage()
-//        cocoapods()
-//        open()
+        bootProject()
     }
     
     private func copyTemplateFolder() {
         do {
             let templateURL = filepath.projectTemplateURL(type: projectSettings.architecture).toURL
-            let newURL = filepath.generatedDirectoryURL(settings: projectSettings).toURL
+            print(templateURL.absoluteString)
             try filepath.fileManager.copyItem(at: templateURL, to: newURL)
         } catch let error as NSError {
             Console.printErrorAndExit(message: error.localizedDescription)
@@ -284,7 +291,6 @@ public class Main {
     }
     
     private func rename() {
-        let newURL = filepath.generatedDirectoryURL(settings: projectSettings).toURL
         guard let enumerator = filepath.fileManager.enumerator(at: newURL, includingPropertiesForKeys: [.nameKey, .isDirectoryKey], options: [], errorHandler: nil) else {
             Console.printErrorAndExit(message: "failure rename")
             return
@@ -315,13 +321,8 @@ public class Main {
         }
     }
     
-    private func carthage() {
-    }
-    
-    private func cocoapods() {
-    }
-    
-    private func open() {
+    private func bootProject() {
+        
     }
     
 }
