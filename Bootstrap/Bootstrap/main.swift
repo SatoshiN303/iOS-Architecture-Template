@@ -259,10 +259,11 @@ public class Main {
         return filepath.generatedDirectoryURL(settings: projectSettings).toURL
     }
     
+    
+    
     public func start() {
         
         print("\nLet's go over some question to generate your base project code!")
-        print(filepath.runScriptPathURL.absoluteString!)
         
         projectSettings.name = dialogue.inputProjectName()
         
@@ -283,7 +284,6 @@ public class Main {
     private func copyTemplateFolder() {
         do {
             let templateURL = filepath.projectTemplateURL(type: projectSettings.architecture).toURL
-            print(templateURL.absoluteString)
             try filepath.fileManager.copyItem(at: templateURL, to: newURL)
         } catch let error as NSError {
             Console.printErrorAndExit(message: error.localizedDescription)
@@ -322,7 +322,8 @@ public class Main {
     }
     
     private func bootProject() {
-        
+        print("\nSetting \(projectSettings.name) ...")
+        print(Console.shell(path: newURL.path, args: "sh", "bootstrap.sh").output)
     }
     
 }
