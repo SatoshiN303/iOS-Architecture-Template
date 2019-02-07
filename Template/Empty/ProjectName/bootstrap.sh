@@ -23,6 +23,4 @@ pod install
 echo "Install dependencies via Carthage"
 carthage update --platform ios --no-use-binaries --cache-builds
 
-echo "Enjoy🥂"
-
 open ProjectName.xcworkspace
