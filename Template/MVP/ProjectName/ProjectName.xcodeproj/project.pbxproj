@@ -184,6 +184,7 @@
 		225D7B2E221127DC00E208BB /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				225D7B3C2211968A00E208BB /* AppResult.swift */,
 				2296844B221123BB007A82F3 /* RequestExtension.swift */,
 				225D7B302211280F00E208BB /* OptionalDecoder.swift */,
 				225D7B3222112A2800E208BB /* DecodableDataParser.swift */,
@@ -271,7 +272,6 @@
 			isa = PBXGroup;
 			children = (
 				2867E82A1C74C7D400FCEBBD /* AppDelegate.swift */,
-				225D7B3C2211968A00E208BB /* AppResult.swift */,
 				225D7B3622112FB200E208BB /* API */,
 				22968440220EC85F007A82F3 /* DI */,
 				22006CB8220D877A00D5ABA8 /* Model */,
