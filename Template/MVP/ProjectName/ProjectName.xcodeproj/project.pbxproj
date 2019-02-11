@@ -197,6 +197,7 @@
 				2296844922112311007A82F3 /* Request */,
 				225D7B3722112FD000E208BB /* Response */,
 				2296844A22112322007A82F3 /* Entity */,
+				225D7B2E221127DC00E208BB /* Helper */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -270,7 +271,6 @@
 			children = (
 				2867E82A1C74C7D400FCEBBD /* AppDelegate.swift */,
 				22968440220EC85F007A82F3 /* DI */,
-				225D7B2E221127DC00E208BB /* Helper */,
 				22006CB8220D877A00D5ABA8 /* Model */,
 				22006CB6220D868E00D5ABA8 /* Scenes */,
 				281731661C9B6D43006237C7 /* Storyboards */,
