@@ -14,7 +14,8 @@ class AppAssembly {
     
     class var assembler: Assembler? {
         return Assembler([
-            SampleAssembly()
+            SampleAssembly(),
+            SampleDetailAssembly()
             ])
     }
 }

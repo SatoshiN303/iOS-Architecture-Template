@@ -29,6 +29,10 @@
 		2296844C221123BB007A82F3 /* RequestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2296844B221123BB007A82F3 /* RequestExtension.swift */; };
 		2296844E221124FB007A82F3 /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2296844D221124FB007A82F3 /* SearchUserRequest.swift */; };
 		22968450221125D5007A82F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2296844F221125D5007A82F3 /* User.swift */; };
+		22A3710D2212BAF4001F3DE7 /* SampleDetailAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A3710C2212BAF4001F3DE7 /* SampleDetailAssembly.swift */; };
+		22A3710F2212BB65001F3DE7 /* SampleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A3710E2212BB65001F3DE7 /* SampleDetailViewController.swift */; };
+		22A371112212BBB4001F3DE7 /* SampleDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A371102212BBB4001F3DE7 /* SampleDetailPresenter.swift */; };
+		22A371132212BD19001F3DE7 /* SampleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22A371122212BD19001F3DE7 /* SampleDetail.storyboard */; };
 		2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867E82A1C74C7D400FCEBBD /* AppDelegate.swift */; };
 		2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2867E82E1C74C7D400FCEBBD /* Main.storyboard */; };
 		2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2867E8311C74C7D400FCEBBD /* Assets.xcassets */; };
@@ -87,6 +91,10 @@
 		229827E220761D92004510CC /* Compass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Compass.framework; path = Carthage/Build/iOS/Compass.framework; sourceTree = "<group>"; };
 		229B3782206A2C3F0013DD82 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		229B3783206A2C3F0013DD82 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		22A3710C2212BAF4001F3DE7 /* SampleDetailAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDetailAssembly.swift; sourceTree = "<group>"; };
+		22A3710E2212BB65001F3DE7 /* SampleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailViewController.swift; sourceTree = "<group>"; };
+		22A371102212BBB4001F3DE7 /* SampleDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleDetailPresenter.swift; sourceTree = "<group>"; };
+		22A371122212BD19001F3DE7 /* SampleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SampleDetail.storyboard; sourceTree = "<group>"; };
 		22ADF8C32011C2D200BEA216 /* Config.Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.Debug.xcconfig; sourceTree = "<group>"; };
 		22ADF8C72011C2F400BEA216 /* Config.Adhoc.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.Adhoc.xcconfig; sourceTree = "<group>"; };
 		22ADF8CB2011C31E00BEA216 /* Config.Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.Release.xcconfig; sourceTree = "<group>"; };
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				22006CB7220D869C00D5ABA8 /* Home */,
+				22A371082212BAA1001F3DE7 /* Detail */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -265,6 +274,41 @@
 				2296844F221125D5007A82F3 /* User.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		22A371082212BAA1001F3DE7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				22A371092212BAB5001F3DE7 /* DI */,
+				22A3710A2212BABA001F3DE7 /* Presenter */,
+				22A3710B2212BAC1001F3DE7 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		22A371092212BAB5001F3DE7 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				22A3710C2212BAF4001F3DE7 /* SampleDetailAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		22A3710A2212BABA001F3DE7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				22A371102212BBB4001F3DE7 /* SampleDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		22A3710B2212BAC1001F3DE7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22A3710E2212BB65001F3DE7 /* SampleDetailViewController.swift */,
+				22A371122212BD19001F3DE7 /* SampleDetail.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		281731661C9B6D43006237C7 /* Storyboards */ = {
@@ -491,6 +535,7 @@
 				2867E8351C74C7D400FCEBBD /* LaunchScreen.storyboard in Resources */,
 				2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
+				22A371132212BD19001F3DE7 /* SampleDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,13 +648,16 @@
 			files = (
 				2296844E221124FB007A82F3 /* SearchUserRequest.swift in Sources */,
 				22006CBD220D8C8A00D5ABA8 /* SampleModel.swift in Sources */,
+				22A3710D2212BAF4001F3DE7 /* SampleDetailAssembly.swift in Sources */,
 				225D7B4622129E3000E208BB /* UserTableViewCell.swift in Sources */,
 				225D7B3D2211968A00E208BB /* AppResult.swift in Sources */,
 				22968444220EC8D9007A82F3 /* SampleAssembly.swift in Sources */,
 				2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */,
 				2296844C221123BB007A82F3 /* RequestExtension.swift in Sources */,
 				22968450221125D5007A82F3 /* User.swift in Sources */,
+				22A371112212BBB4001F3DE7 /* SampleDetailPresenter.swift in Sources */,
 				22968442220EC89E007A82F3 /* AppAssembly.swift in Sources */,
+				22A3710F2212BB65001F3DE7 /* SampleDetailViewController.swift in Sources */,
 				225D7B4F2212A3B800E208BB /* Reusable.swift in Sources */,
 				225D7B3322112A2800E208BB /* DecodableDataParser.swift in Sources */,
 				225D7B3B2211921700E208BB /* JsonEncodeRequest.swift in Sources */,

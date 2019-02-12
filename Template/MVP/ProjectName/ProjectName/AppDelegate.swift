@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwinjectStoryboard
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let sb = SwinjectStoryboard.create(name: "Main", bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: "SampleViewController") as? SampleViewController else {
+            fatalError()
+        }
+        
+        let nvc = UINavigationController(rootViewController: vc)
+        window?.rootViewController = nvc
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
