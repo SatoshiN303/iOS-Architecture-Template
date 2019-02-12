@@ -9,6 +9,7 @@
 import Foundation
 import APIKit
 
+// - : seealso https://qiita.com/sgr-ksmt/items/e822a379d41462e05e0d
 struct DecodableDataParser: DataParser {
     var contentType: String? {
         return "application/json"

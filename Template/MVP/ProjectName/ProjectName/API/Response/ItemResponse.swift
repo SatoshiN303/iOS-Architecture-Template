@@ -13,6 +13,12 @@ public struct ItemResponse<Item: Codable>: Codable {
     public var incompleteResults: Bool
     public var items: [Item]
     
+    private enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case incompleteResults = "incomplete_results"
+        case items
+    }
+    
     public init(totalCount: Int, incompleteResults: Bool, items: [Item]) {
         self.totalCount = totalCount
         self.incompleteResults = incompleteResults

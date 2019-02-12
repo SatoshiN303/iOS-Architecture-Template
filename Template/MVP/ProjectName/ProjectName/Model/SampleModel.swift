@@ -10,7 +10,7 @@ import Result
 
 protocol SampleModelInput {
     func fetchUser(query: String,
-                   completion: @escaping (AppResult<[User]>) -> ())
+                   completion: @escaping (AppResult<[User]>) -> Void)
 }
 
 protocol SampleModelOutput {
@@ -19,9 +19,13 @@ protocol SampleModelOutput {
 public struct SampleModel: SampleModelInput {
     
     func fetchUser(query: String,
-                   completion: @escaping (AppResult<[User]>) -> ()) {
+                   completion: @escaping (AppResult<[User]>) -> Void) {
 
-        let request = SearchUserRequest(query: query, sort: nil, order: nil, page: nil, perPage: nil)
+        let request = SearchUserRequest(query: query,
+                                        sort: nil,
+                                        order: nil,
+                                        page: nil,
+                                        perPage: nil)
         
         Session.send(request, callbackQueue: nil) { result in
             switch result {

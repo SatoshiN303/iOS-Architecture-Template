@@ -8,13 +8,13 @@
 
 import APIKit
 
-extension Request where Response: Codable, Self: OptionalDecoder {
+extension Request where Response: Codable {
     
     var baseURL: URL {
         return URL(string: "https://api.github.com")!
     }
         
-    var queryParameters: [String : Any]? {
+    var queryParameters: [String: Any]? {
         return nil
     }
     
@@ -28,9 +28,6 @@ extension Request where Response: Codable, Self: OptionalDecoder {
             throw ResponseError.unexpectedObject(object)
         }
         
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = optionalDecodingKey!
-        
-        return try decoder.decode(Response.self, from: data)
+        return try JSONDecoder().decode(Response.self, from: data)
     }
 }

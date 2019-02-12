@@ -17,6 +17,16 @@ public struct User: Codable {
     public let url: URL
     public let receivedEventsURL: URL
     public let type: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case login, id
+        case nodeID = "node_id"
+        case avatarURL = "avatar_url"
+        case gravatarID = "gravatar_id"
+        case url
+        case receivedEventsURL = "received_events_url"
+        case type
+    }
 
     public init(login: String,
                 id: Int,

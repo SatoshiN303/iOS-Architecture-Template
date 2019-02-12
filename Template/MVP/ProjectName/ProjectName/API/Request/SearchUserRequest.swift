@@ -6,7 +6,7 @@
 //  Copyright © 2019 OrganizationName. All rights reserved.
 //
 
-/// - : https://developer.github.com/v3/search/#search-users
+/// - : seealso https://developer.github.com/v3/search/#search-users
 
 import Foundation
 import APIKit
@@ -23,7 +23,7 @@ struct SearchUserRequest: JSONEncodeRequest {
         return "/search/users"
     }
     
-    var queryParameters: [String : Any]? {
+    var queryParameters: [String: Any]? {
         var params: [String: String] = ["q": query]
         
         if let sort = sort {

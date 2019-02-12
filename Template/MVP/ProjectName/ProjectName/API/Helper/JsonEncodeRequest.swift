@@ -7,11 +7,11 @@
 //
 import APIKit
 
-protocol JSONEncodeRequest: Request, OptionalDecoder {
+protocol JSONEncodeRequest: Request {
 }
 
 extension JSONEncodeRequest {
-    var headerFields: [String : String] {
+    var headerFields: [String: String] {
         return ["Accept": "application/json"]
     }
 }
