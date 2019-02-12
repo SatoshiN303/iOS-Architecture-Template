@@ -18,6 +18,8 @@
 		225D7B3D2211968A00E208BB /* AppResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D7B3C2211968A00E208BB /* AppResult.swift */; };
 		225D7B3E2212641500E208BB /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D8FAF2068CAD800A341BB /* Result.framework */; };
 		225D7B402212641500E208BB /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225D7B3F2212641500E208BB /* APIKit.framework */; };
+		225D7B4622129E3000E208BB /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D7B4522129E3000E208BB /* UserTableViewCell.swift */; };
+		225D7B4F2212A3B800E208BB /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225D7B4E2212A3B800E208BB /* Reusable.swift */; };
 		226D8FAC2068CAC200A341BB /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D8FAB2068CAC200A341BB /* SwiftDate.framework */; };
 		226D8FB42068CB0000A341BB /* Device.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226D8FB32068CB0000A341BB /* Device.framework */; };
 		22968442220EC89E007A82F3 /* AppAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22968441220EC89E007A82F3 /* AppAssembly.swift */; };
@@ -66,6 +68,8 @@
 		225D7B3A2211921700E208BB /* JsonEncodeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonEncodeRequest.swift; sourceTree = "<group>"; };
 		225D7B3C2211968A00E208BB /* AppResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppResult.swift; sourceTree = "<group>"; };
 		225D7B3F2212641500E208BB /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
+		225D7B4522129E3000E208BB /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		225D7B4E2212A3B800E208BB /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		226D8FA92068CAB600A341BB /* Unbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Unbox.framework; path = Carthage/Build/iOS/Unbox.framework; sourceTree = "<group>"; };
 		226D8FAB2068CAC200A341BB /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		226D8FAD2068CACD00A341BB /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
@@ -143,9 +147,9 @@
 		22006CB7220D869C00D5ABA8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				22006CB2220D866400D5ABA8 /* SampleViewController.swift */,
-				22006CB4220D867A00D5ABA8 /* SamplePresenter.swift */,
-				22968443220EC8D9007A82F3 /* SampleAssembly.swift */,
+				225D7B4922129E6E00E208BB /* DI */,
+				225D7B4822129E4800E208BB /* Presenter */,
+				225D7B4722129E3C00E208BB /* View */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -204,6 +208,39 @@
 				225D7B382211301F00E208BB /* ItemResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		225D7B4722129E3C00E208BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22006CB2220D866400D5ABA8 /* SampleViewController.swift */,
+				225D7B4522129E3000E208BB /* UserTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		225D7B4822129E4800E208BB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				22006CB4220D867A00D5ABA8 /* SamplePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		225D7B4922129E6E00E208BB /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				22968443220EC8D9007A82F3 /* SampleAssembly.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		225D7B4D2212A3A400E208BB /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				225D7B4E2212A3B800E208BB /* Reusable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		22968440220EC85F007A82F3 /* DI */ = {
@@ -268,6 +305,7 @@
 				2867E82A1C74C7D400FCEBBD /* AppDelegate.swift */,
 				225D7B3622112FB200E208BB /* API */,
 				22968440220EC85F007A82F3 /* DI */,
+				225D7B4D2212A3A400E208BB /* Helper */,
 				22006CB8220D877A00D5ABA8 /* Model */,
 				22006CB6220D868E00D5ABA8 /* Scenes */,
 				281731661C9B6D43006237C7 /* Storyboards */,
@@ -565,12 +603,14 @@
 			files = (
 				2296844E221124FB007A82F3 /* SearchUserRequest.swift in Sources */,
 				22006CBD220D8C8A00D5ABA8 /* SampleModel.swift in Sources */,
+				225D7B4622129E3000E208BB /* UserTableViewCell.swift in Sources */,
 				225D7B3D2211968A00E208BB /* AppResult.swift in Sources */,
 				22968444220EC8D9007A82F3 /* SampleAssembly.swift in Sources */,
 				2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */,
 				2296844C221123BB007A82F3 /* RequestExtension.swift in Sources */,
 				22968450221125D5007A82F3 /* User.swift in Sources */,
 				22968442220EC89E007A82F3 /* AppAssembly.swift in Sources */,
+				225D7B4F2212A3B800E208BB /* Reusable.swift in Sources */,
 				225D7B3322112A2800E208BB /* DecodableDataParser.swift in Sources */,
 				225D7B3B2211921700E208BB /* JsonEncodeRequest.swift in Sources */,
 				22006CB3220D866400D5ABA8 /* SampleViewController.swift in Sources */,
