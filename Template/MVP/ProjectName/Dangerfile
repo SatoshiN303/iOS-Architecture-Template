@@ -1,0 +1,32 @@
+# coding: utf-8
+
+require 'json'
+
+fail("MRの説明を入力してください") if gitlab.mr_body.empty?
+
+# check cocoapod update
+#if podspec_updated && (!cartfile_updated || !cartfile_resolved_updated)
+#  warn("The `podspec` was updated, but there were no changes in either the `Cartfile` nor `Cartfile.resolved`. Did you forget updating `Cartfile` or `Cartfile.resolved`?")
+#end
+
+# check carthage update
+#if (cartfile_updated || cartfile_resolved_updated) && !podspec_updated
+#  warn("The `Cartfile` or `Cartfile.resolved` was updated, but there were no changes in the `podspec`. Did you forget updating the `podspec`?")
+#end
+
+# check Big 
+warn("変更内容が多すぎます") if git.lines_of_code > 500
+
+unless gitlab.mr_title.include?(gitlab.mr_json["iid"].to_s)
+  fail("Merge request ID was not set to #{gitlab.mr_json['iid']}")
+end
+
+xcov.report(
+  scheme: 'XLProjectName-Debug',
+  workspace: 'XLProjectName.xcworkspace',
+  exclude_targets: 'Rswift.framework',
+  minimum_coverage_percentage: 40.0
+)
+
+swiftlint.config_file = '.swiftlint.yml'
+swiftlint.lint_files inline_mode: true
