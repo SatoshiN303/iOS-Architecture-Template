@@ -2,9 +2,10 @@
 //  SampleAssembly.swift
 //  ProjectName
 //
-//  Created by 佐藤 慎 on 2019/02/09.
-//  Copyright © 2019年 'XLOrganizationName'. All rights reserved.
+//  Created by AuthorName
+//  Copyright © 2019 OrganizationName. All rights reserved.
 //
+
 import Foundation
 import Swinject
 import SwinjectStoryboard

@@ -51,9 +51,10 @@ extension SampleViewController: UITableViewDataSource {
 
 extension SampleViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let user = presenter.user(forRow: indexPath.row) else {
-//            return
-//        }
-//         TODO: Create ViewController and change screen transition
+        guard let user = presenter.user(forRow: indexPath.row) else {
+            return
+        }
+        let vc = SampleDetailViewController.makeInstance(user: user)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
