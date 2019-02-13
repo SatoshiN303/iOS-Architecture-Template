@@ -54,5 +54,4 @@ extension SamplePresenter: SampleUseCaseOutput {
         // Error Handling
     }
     
-    
 }
