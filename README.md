@@ -6,14 +6,6 @@ iOS-Architecture-Template
 ![CocoaPods](https://img.shields.io/badge/pod-1.5.3-blue.svg)
 ![Carthage](https://img.shields.io/badge/carthage-0.31.2-blue.svg)
 
-## TODO
-- [x] Empty Template
-- [ ] CocoaMVC Template
-- [x] MVP Template
-- [ ] MVVM Template
-- [ ] VIPER Template
-- [x] CleanArchitecture
-
 ## Usage
 
 git clone: 
@@ -34,4 +26,10 @@ Answer some questions:
 
 Now start coding your app!! 🥂
 
-## LICENCE
+## TODO
+- [x] Empty Template
+- [ ] CocoaMVC Template
+- [x] MVP Template
+- [ ] MVVM Template
+- [ ] VIPER Template
+- [x] CleanArchitecture
