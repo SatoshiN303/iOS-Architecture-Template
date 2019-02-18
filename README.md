@@ -7,12 +7,12 @@ iOS-Architecture-Template
 ![Carthage](https://img.shields.io/badge/carthage-0.31.2-blue.svg)
 
 ## TODO
-- [ ] Empty Template
+- [x] Empty Template
 - [ ] CocoaMVC Template
-- [ ] MVP Template
+- [x] MVP Template
 - [ ] MVVM Template
 - [ ] VIPER Template
-- [ ] CleanArchitecture
+- [x] CleanArchitecture
 
 ## Usage
 
