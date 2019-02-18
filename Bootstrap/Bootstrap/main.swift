@@ -72,7 +72,7 @@ public struct Console {
         let isOutRange = range.filter { (idx) -> Bool in return "\(idx)" == line }.count == 0
         
         if isOutRange {
-            print("選択肢にある数字を入力してください")
+            print("Please enter a number")
             return select(message: message, choices: choices, defaultValue: defaultValue)
         }
         
@@ -104,7 +104,7 @@ public struct Dialogue {
     @discardableResult
     func selectArchitecture() -> ArchitectureType {
         let typeNames = ArchitectureType.allCases.map { (type) -> String in type.rawValue }
-        let choise = Console.select(message: "ビルドしたいアーキテクチャーの番号を入力してください", choices: typeNames, defaultValue: "0")
+        let choise = Console.select(message: "Enter the architecture number", choices: typeNames, defaultValue: "0")
         
         guard let choiseNumber = Int(choise) else {
             fatalError()
@@ -115,22 +115,22 @@ public struct Dialogue {
     
     @discardableResult
     func inputProjectName() -> String {
-        return Console.prompt(message: "プロジェクト名を入力してください", defaultValue: settings.name)
+        return Console.prompt(message: "Enter the project name", defaultValue: settings.name)
     }
     
     @discardableResult
     func settingBundleID() -> String {
-        return Console.prompt(message: "BundleIDを入力してください", defaultValue: settings.bundleID)
+        return Console.prompt(message: "Enter the bundle identifier", defaultValue: settings.bundleID)
     }
     
     @discardableResult
     func settingAuthor() -> String {
-        return Console.prompt(message: "コード署名に記載されるAuthorを入力してください", defaultValue: settings.author)
+        return Console.prompt(message: "Enter the Author listed in the code signature", defaultValue: settings.author)
     }
     
     @discardableResult
     func settingOrganizationName() -> String {
-        return Console.prompt(message: "Organization Name", defaultValue: settings.organizationName)
+        return Console.prompt(message: "Enter the OrganizationName listed in the code signature", defaultValue: settings.organizationName)
     }
     
 }
